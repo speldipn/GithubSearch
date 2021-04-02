@@ -26,11 +26,7 @@ class MainActivity : AppCompatActivity() {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    Log.d(TAG, "List size: ${it.totalCount}")
-                    var count = 0
-                    for (user in it.items) {
-                        Log.d(TAG, "[${count++}]: ${user}")
-                    }
+                    // TODO
                 }, {
                     Log.d(TAG, "Exception, ${it.message}")
                 })
