@@ -2,10 +2,12 @@ package com.example.githubsearch.module
 
 import com.example.githubsearch.Const
 import com.example.githubsearch.network.GithubApi
+import com.example.githubsearch.ui.MainViewModel
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import io.reactivex.disposables.CompositeDisposable
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -32,4 +34,8 @@ val networkModule = module {
     }
 }
 
-val modules = listOf(networkModule)
+val viewModelModules = module {
+    viewModel { MainViewModel(get()) }
+}
+
+val modules = listOf(networkModule, viewModelModules)

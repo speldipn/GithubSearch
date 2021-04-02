@@ -7,13 +7,15 @@ buildscript {
         retrofit_rxjava_adapter_version = "1.0.0"
         okhttp_version = "3.12.1"
         gson_version = "2.6.1"
+        fresco_version = "2.4.0"
+        paging_version = "2.1.2"
     }
 
     repositories {
         google()
         jcenter()
     }
-   
+
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
